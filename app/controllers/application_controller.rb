@@ -23,7 +23,7 @@ class ApplicationController < Sinatra::Base
 end
 
   get '/account' do
-  @user = User.find(id: session[:user_id]) # to find use 
+  @user = User.find_by(id: session[:user_id]) # to find use 
 
 if @user# if it finds user this will be truthy and go to account user
     erb :account
